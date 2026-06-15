@@ -64,7 +64,7 @@
     </div>
   </div>
 
-  <!-- NAVIGATION HEADER -->
+  <!-- NAVIGATION HEADER WITH RESPONSIVE HAMBURGER -->
   <header class="bg-white/95 backdrop-blur-md sticky top-0 border-b border-slate-200 z-40 transition-all duration-300 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('tab-beranda')">
@@ -77,8 +77,8 @@
         </div>
       </div>
       
-      <!-- DESKTOP NAV -->
-      <nav class="hidden md:flex items-center space-x-1 font-medium">
+      <!-- DESKTOP NAVIGATION VIEW -->
+      <nav class="hidden lg:flex items-center space-x-1 font-medium">
         <button onclick="switchTab('tab-beranda')" class="nav-btn px-3 py-2 rounded-lg text-sm text-blue-950 hover:bg-slate-100 transition-all font-semibold" id="btn-tab-beranda"><i class="fa-solid fa-house mr-1.5"></i>Beranda</button>
         <button onclick="switchTab('tab-layanan')" class="nav-btn px-3 py-2 rounded-lg text-sm text-slate-600 hover:bg-slate-100 transition-all font-semibold" id="btn-tab-layanan"><i class="fa-solid fa-list-check mr-1.5"></i>Panduan Layanan</button>
         <button onclick="switchTab('tab-pengajuan')" class="nav-btn px-3 py-2 rounded-lg text-sm text-slate-600 hover:bg-slate-100 transition-all font-semibold" id="btn-tab-pengajuan"><i class="fa-solid fa-file-circle-plus mr-1.5"></i>Pengajuan Berkas</button>
@@ -87,6 +87,24 @@
         <button onclick="switchTab('tab-petugas-login')" class="bg-blue-50 text-blue-700 border border-blue-200/60 px-4 py-2 rounded-xl text-sm font-bold hover:bg-blue-100 transition-all shadow-sm" id="btn-tab-petugas-login"><i class="fa-solid fa-user-shield mr-1.5"></i>Konsol Petugas</button>
         <button onclick="openConfigModal()" class="text-slate-400 hover:text-blue-600 p-2 text-base transition-all"><i class="fa-solid fa-gears"></i></button>
       </nav>
+
+      <!-- MOBILE INTERACTIVE HAMBURGER BUTTON -->
+      <div class="flex lg:hidden items-center space-x-2">
+        <button onclick="openConfigModal()" class="text-slate-400 hover:text-blue-600 p-2 text-base transition-all"><i class="fa-solid fa-gears"></i></button>
+        <button onclick="toggleMobileMenuDrawer()" class="text-slate-700 hover:text-blue-900 focus:outline-none p-2 rounded-xl bg-slate-100 w-10 h-10 flex items-center justify-center">
+          <i class="fa-solid fa-bars text-lg m-auto" id="hamburgerIcon"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- MOBILE EXPANDABLE DROPDOWN MENU CONTAINER -->
+    <div id="mobileMenuDrawer" class="hidden lg:hidden border-t border-slate-200 bg-white shadow-xl px-4 py-3 space-y-2 font-semibold text-sm">
+      <button onclick="mobileNavRedirect('tab-beranda')" class="w-full text-left px-4 py-2.5 rounded-xl text-slate-700 hover:bg-slate-50 flex items-center"><i class="fa-solid fa-house w-6 text-slate-400"></i> Beranda</button>
+      <button onclick="mobileNavRedirect('tab-layanan')" class="w-full text-left px-4 py-2.5 rounded-xl text-slate-700 hover:bg-slate-50 flex items-center"><i class="fa-solid fa-list-check w-6 text-slate-400"></i> Panduan Layanan</button>
+      <button onclick="mobileNavRedirect('tab-pengajuan')" class="w-full text-left px-4 py-2.5 rounded-xl text-slate-700 hover:bg-slate-50 flex items-center"><i class="fa-solid fa-file-circle-plus w-6 text-slate-400"></i> Pengajuan Berkas</button>
+      <button onclick="mobileNavRedirect('tab-status')" class="w-full text-left px-4 py-2.5 rounded-xl text-slate-700 hover:bg-slate-50 flex items-center"><i class="fa-solid fa-magnifying-glass w-6 text-slate-400"></i> Lacak Status</button>
+      <button onclick="mobileNavRedirect('tab-pengaduan')" class="w-full text-left px-4 py-2.5 rounded-xl text-rose-600 hover:bg-rose-50 flex items-center"><i class="fa-solid fa-bullhorn w-6 text-rose-500"></i> Form Pengaduan</button>
+      <button onclick="mobileNavRedirect('tab-petugas-login')" class="w-full text-left px-4 py-2.5 rounded-xl bg-blue-50 text-blue-700 flex items-center"><i class="fa-solid fa-user-shield w-6 text-blue-600"></i> Konsol Petugas</button>
     </div>
   </header>
 
@@ -146,8 +164,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-sm flex flex-col md:flex-row items-center gap-6 sm:gap-8 bg-gradient-to-br from-white to-slate-50/50">
           <div class="w-44 h-44 rounded-2xl bg-slate-200 overflow-hidden flex-shrink-0 border-4 border-blue-900/10 shadow-md flex items-center justify-center relative group">
-            <!-- Representasi Foto Resmi Menggunakan Placeholder Portrait Profesional Art -->
-            <img src="https://dochub.com/m/shared-document/kambu-7410/7J4mQvgRvzNanjZRj2pO5n/image-kadis-capil-jpg?dt=jPyZryJt4pG7p3sEas4H" alt="Rulyana, SH., M.Si" class="w-full h-full object-cover object-top filter contrast-105">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400" alt="Rulyana, SH., M.Si" class="w-full h-full object-cover object-top filter contrast-105">
             <div class="absolute bottom-0 inset-x-0 bg-blue-900/90 text-white text-[10px] text-center py-1 font-bold tracking-wider uppercase">Kepala Dinas</div>
           </div>
           <div class="space-y-3 flex-grow text-center md:text-left">
@@ -263,7 +280,7 @@
       </div>
     </section>
 
-    <!-- SECTION 3: FORM penGAJUAN -->
+    <!-- SECTION 3: FORM PENGAJUAN -->
     <section id="tab-pengajuan" class="tab-content hidden max-w-3xl mx-auto px-4 py-12">
       <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-xl space-y-6">
         <div class="text-center space-y-1">
@@ -536,6 +553,23 @@
       'use strict';
       let globalDataCache = [];
       
+      window.toggleMobileMenuDrawer = function() {
+        let menu = document.getElementById('mobileMenuDrawer');
+        let icon = document.getElementById('hamburgerIcon');
+        if (menu.classList.contains('hidden')) {
+          menu.classList.remove('hidden');
+          icon.className = "fa-solid fa-xmark text-lg m-auto";
+        } else {
+          menu.classList.add('hidden');
+          icon.className = "fa-solid fa-bars text-lg m-auto";
+        }
+      }
+
+      window.mobileNavRedirect = function(tabId) {
+        window.switchTab(tabId);
+        window.toggleMobileMenuDrawer();
+      }
+
       function initBlangkoDisplay() {
         let ktpStock = localStorage.getItem('STOK_BLANGKO_KTP') || '1425';
         let kiaStock = localStorage.getItem('STOK_BLANGKO_KIA') || '820';
